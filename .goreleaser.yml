@@ -51,6 +51,7 @@ dockers:
     goos: linux
     goarch: amd64
     goarm: ""
+    skip_push: true
     image_templates:
       - "screego/server:amd64-unstable"
       - "screego/server:amd64-{{ .RawVersion }}"
@@ -69,6 +70,7 @@ dockers:
     goos: linux
     goarch: "386"
     goarm: ""
+    skip_push: true
     image_templates:
       - "screego/server:386-unstable"
       - "screego/server:386-{{ .RawVersion }}"
@@ -87,6 +89,7 @@ dockers:
     goos: linux
     goarch: arm64
     goarm: ""
+    skip_push: true
     image_templates:
       - "screego/server:arm64-unstable"
       - "screego/server:arm64-{{ .RawVersion }}"
@@ -105,6 +108,7 @@ dockers:
     goos: linux
     goarch: arm
     goarm: 7
+    skip_push: true
     image_templates:
       - "screego/server:armv7-unstable"
       - "screego/server:armv7-{{ .RawVersion }}"
@@ -123,6 +127,7 @@ dockers:
     goos: linux
     goarch: arm
     goarm: 6
+    skip_push: true
     image_templates:
       - "screego/server:armv6-unstable"
       - "screego/server:armv6-{{ .RawVersion }}"
@@ -141,6 +146,7 @@ dockers:
     goos: linux
     goarch: ppc64le
     goarm: ""
+    skip_push: true
     image_templates:
       - "screego/server:ppc64le-unstable"
       - "screego/server:ppc64le-{{ .RawVersion }}"
@@ -159,6 +165,7 @@ dockers:
     goos: linux
     goarch: riscv64
     goarm: ""
+    skip_push: true
     image_templates:
       - "screego/server:riscv64-unstable"
       - "screego/server:riscv64-{{ .RawVersion }}"
@@ -175,6 +182,7 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
 docker_manifests:
   - name_template: "ghcr.io/screego/server:unstable"
+    skip_push: true
     image_templates:
       - "ghcr.io/screego/server:amd64-unstable"
       - "ghcr.io/screego/server:386-unstable"
@@ -184,6 +192,7 @@ docker_manifests:
       - "ghcr.io/screego/server:ppc64le-unstable"
       - "ghcr.io/screego/server:riscv64-unstable"
   - name_template: "screego/server:unstable"
+    skip_push: true
     image_templates:
       - "screego/server:amd64-unstable"
       - "screego/server:386-unstable"
@@ -193,6 +202,7 @@ docker_manifests:
       - "screego/server:ppc64le-unstable"
       - "screego/server:riscv64-unstable"
   - name_template: "screego/server:{{ .RawVersion }}"
+    skip_push: true
     image_templates:
       - "screego/server:amd64-{{ .RawVersion }}"
       - "screego/server:386-{{ .RawVersion }}"
@@ -202,6 +212,7 @@ docker_manifests:
       - "screego/server:ppc64le-{{ .RawVersion }}"
       - "screego/server:riscv64-{{ .RawVersion }}"
   - name_template: "ghcr.io/screego/server:{{ .RawVersion }}"
+    skip_push: true
     image_templates:
       - "ghcr.io/screego/server:amd64-{{ .RawVersion }}"
       - "ghcr.io/screego/server:386-{{ .RawVersion }}"
@@ -211,6 +222,7 @@ docker_manifests:
       - "ghcr.io/screego/server:ppc64le-{{ .RawVersion }}"
       - "ghcr.io/screego/server:riscv64-{{ .RawVersion }}"
   - name_template: "screego/server:{{ .Major }}"
+    skip_push: true
     image_templates:
       - "screego/server:amd64-{{ .Major }}"
       - "screego/server:386-{{ .Major }}"
@@ -220,6 +232,7 @@ docker_manifests:
       - "screego/server:ppc64le-{{ .Major }}"
       - "screego/server:riscv64-{{ .Major }}"
   - name_template: "ghcr.io/screego/server:{{ .Major }}"
+    skip_push: true
     image_templates:
       - "ghcr.io/screego/server:amd64-{{ .Major }}"
       - "ghcr.io/screego/server:386-{{ .Major }}"
